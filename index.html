@@ -1,0 +1,142 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Memory Color Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div id="startFrame">
+        <h1>MEMORY COLOR GAME</h1>
+        <div id="startButton" onclick="start()">START</div>
+      </div>
+      <div id="game">
+        <div class="row">
+          <div class="card">
+            <div class="cardcontent" id="cc1" onclick="cardClick(1)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c1"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc2" onclick="cardClick(2)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c2"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc3" onclick="cardClick(3)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c3"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc4" onclick="cardClick(4)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c4"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="cardcontent" id="cc5" onclick="cardClick(5)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c5"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc6" onclick="cardClick(6)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c6"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc7" onclick="cardClick(7)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c7"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc8" onclick="cardClick(8)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c8"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card">
+            <div class="cardcontent" id="cc9" onclick="cardClick(9)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c9"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc10" onclick="cardClick(10)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c10"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc11" onclick="cardClick(11)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c11"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc12" onclick="cardClick(12)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c12"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card">
+            <div class="cardcontent" id="cc13" onclick="cardClick(13)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c13"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc14" onclick="cardClick(14)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c14"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc15" onclick="cardClick(15)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c15"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardcontent" id="cc16" onclick="cardClick(16)">
+              <div class="cardfront"></div>
+              <div class="cardback" id="c16"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="endFrame">
+        <div id="seconds1">SECONDS</div>
+        <div id="seconds2">0</div>
+        <div id="moves1">MOVES</div>
+        <div id="moves2">0</div>
+        <div id="score1">SCORE</div>
+        <div id="score2">0</div>
+        <div id="stars1">STARS</div>
+        <div id="stars2">★★★★★</div>
+        <p>Reload to restart!</p>
+      </div>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

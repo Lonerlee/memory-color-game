@@ -1,0 +1,131 @@
+html,
+body,
+main {
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+  background-color: black;
+  font-family: "Oswald", sans-serif;
+}
+
+img {
+  margin: 10%;
+  height: 80%;
+  width: 80%;
+}
+
+h1 {
+  color: #d798f0;
+}
+
+/* MAIN */
+
+main {
+  width: 100%;
+  background: linear-gradient(to bottom, #120e24 0%, #251d49 100%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#startButton {
+  background: linear-gradient(to bottom, #362a6b 0%, #5240a0 100%);
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#endFrame {
+  display: none;
+  padding: 10px;
+  background-color: #4a3994;
+  border-radius: 5%;
+}
+
+#moves1,
+#moves2,
+#stars1,
+#stars2,
+#score1,
+#score2,
+#seconds1,
+#seconds2 {
+  text-align: center;
+  background-color: #5e49be;
+  margin: 5px;
+  border-radius: 5%;
+}
+
+#game {
+  width: 90%;
+  height: 90%;
+  background: linear-gradient(to bottom, #251d49 0%, #120e24 100%);
+  border-radius: 2%;
+  display: none;
+}
+
+.row {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  height: 90%;
+  width: 24%;
+  margin: auto;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  transition: transform 0.2s;
+}
+
+.cardcontent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.active {
+  transform: rotateY(180deg);
+}
+
+.cardfront {
+  border-radius: 10%;
+  background: url(bg.png) no-repeat center center fixed,
+    linear-gradient(to right, #251d49 0%, #4a3994 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.cardback {
+  border-radius: 10%;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  /* background: url(bg.png) no-repeat center center fixed; */
+}
+
+/* FOOTER */
+
+/* PALETTE:
+#B2A8DD
+#7D6CC6
+#4A3994
+#251D49
+#120E24
+*/
