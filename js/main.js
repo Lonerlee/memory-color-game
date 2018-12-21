@@ -69,14 +69,6 @@ function createGrid() {
   }
 }
 
-// function onClick(i) {
-//   if (clicked === 0 && wait === 0) {
-//     document.getElementById("c" + i).style.transform = "rotateY(180deg)";
-//   }
-// }
-
-//^ left just in case but not super important
-
 function start() {
   var x = document.getElementById("startFrame");
   x.style.display = "none";
@@ -157,13 +149,6 @@ function cardTurn(i) {
       console.log("pong");
       console.log(colors[position[i - 1]]);
     }
-
-    // if (colors[position[i - 1]] === colors[position[holder - 1]]) {
-    //   console.log("yup");
-    //   cardsLeft--;
-    //   wait = 0;
-    // } else {
-    // }
 
     if (content != 0) {
       holder = i;
