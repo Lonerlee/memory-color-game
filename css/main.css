@@ -120,6 +120,14 @@ main {
   /* background: url(bg.png) no-repeat center center fixed; */
 }
 
+.bttn {
+  background-color: #7d6cc6;
+  padding: 5px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: center;
+}
+
 /* FOOTER */
 
 /* PALETTE:

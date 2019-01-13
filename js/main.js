@@ -9,26 +9,9 @@ let colors = [
   "#00aaff"
 ];
 
-// let signs = ["★", "❀", "ヅ", "❤", "♫", "✼", "❂", "✧"];
+let position = ["0", "1", "2", "3", "4", "5", "6", "7"];
 
-let position = [
-  "0",
-  "0",
-  "1",
-  "1",
-  "2",
-  "2",
-  "3",
-  "3",
-  "4",
-  "4",
-  "5",
-  "5",
-  "6",
-  "6",
-  "7",
-  "7"
-];
+position = position.concat(position); //extending table by same numbers
 
 // let clicked = 0; //checking if clicked or not
 
@@ -43,13 +26,16 @@ let isGameStarted = 1;
 let score = 999999;
 let seconds = 0;
 let stars = 5;
+let setInt;
 
 function shuffle(array) {
+  //randomizing the cards
   let current = array.length,
     temp,
     random;
 
   while (0 !== current) {
+    //it will continue till all cards will be shuffled
     random = Math.floor(Math.random() * current);
     current -= 1;
 
@@ -62,6 +48,7 @@ function shuffle(array) {
 }
 
 function createGrid() {
+  //shuffle colors of cards
   for (i = 1; i < 17; i++) {
     document.getElementById("c" + i).style.backgroundColor =
       colors[position[i - 1]];
@@ -70,25 +57,27 @@ function createGrid() {
 }
 
 function start() {
+  //hiding frame with start button and showing both game frame and score frame
   var x = document.getElementById("startFrame");
   x.style.display = "none";
   var x = document.getElementById("game");
   x.style.display = "block";
   var x = document.getElementById("endFrame");
   x.style.display = "block";
+  //starting game (counting)
+  startGame();
 }
 
 function startGame() {
-  // shuffle(colors);
-  // shuffle(backgrounds);
-  shuffle(position);
+  //starting game
+  shuffle(position); //shuffling position of cards
   createGrid();
 
   console.log(colors);
-  // console.log(backgrounds);
   console.log(position);
 
-  setInterval(function() {
+  setInt = setInterval(function() {
+    //changing state of variables every 1 second
     if (isGameStarted === 1) {
       seconds++;
       if (score < 200000 && score >= 100000) {
@@ -111,15 +100,15 @@ function startGame() {
   }, 1000);
 }
 
-startGame();
-
 function cardClick(i) {
   if (wait === 0) {
     setTimeout(function() {
+      //turning picked card
       cardTurn(i);
     }, 0);
   }
   setTimeout(function() {
+    //dissabling ability to open another card for 0.35 s
     wait = 0;
   }, 350);
 }
@@ -133,30 +122,28 @@ function cardTurn(i) {
 
     console.log("stop");
   } else {
+    //adding moves, 2 card clicks account as 1 click so added value equals 0.5
     moves = moves + 0.5;
     console.log(moves + " moves");
     document.getElementById("moves2").innerHTML = moves.toFixed(0);
 
-    //opening cards
-
     if (content === 0) {
+      //opening cards
       content++;
       d.className = "cardcontent active";
-      console.log("ping");
     } else {
       content = 0;
       d.className = "cardcontent active";
-      console.log("pong");
-      console.log(colors[position[i - 1]]);
     }
 
     if (content != 0) {
+      //if there is no picked card, picked card id will go into a holder to see if the next card will be a match
       holder = i;
       console.log("holder");
-
-      //checking what card is opened
     } else {
+      //checking if card is a match, (-1) is because array starts 1 diggit earlier
       if (colors[position[i - 1]] != colors[position[holder - 1]]) {
+        //giving time of 0.35 s for card to turn around and in case of not match return to previous state
         setTimeout(function() {
           d = document.getElementById("cc" + i);
           d.className = "cardcontent";
@@ -166,6 +153,7 @@ function cardTurn(i) {
       } else {
         cardsLeft--;
         if (cardsLeft === 0) {
+          //if there is no cards left, game will stop and div with the game will dissapear
           isGameStarted = 0;
           var x = document.getElementById("game");
           x.style.display = "none";
@@ -173,7 +161,4 @@ function cardTurn(i) {
       }
     }
   }
-
-  // d = document.getElementById("cc" + i);
-  // d.className = "cardcontent";
 }
